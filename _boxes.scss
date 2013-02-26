@@ -1,0 +1,51 @@
+//* Box sizing *//
+
+@mixin box-format($width, $height) {
+	background-image:url('images/box-bg.png');
+	padding: 0;
+	width: $width;
+	height: $height;
+	display: block;
+	float: left;
+	position: relative;
+	opacity: 0.8;
+}
+
+//* Box order by side *//
+
+@mixin box-border($side1, $side2:"", $side3:"", $side4:"") {
+	@if $side2 == "" {
+		border-#{$side1}: 3px solid #291e13;
+	}
+	@else if $side4 != "" {
+		border-#{$side1}: 3px solid #291e13;
+		border-#{$side2}: 3px solid #291e13;
+		border-#{$side3}: 3px solid #291e13;
+		border-#{$side4}: 3px solid #291e13;
+	}
+	@else if $side3 != "" {
+		border-#{$side1}: 3px solid #291e13;
+		border-#{$side2}: 3px solid #291e13;
+		border-#{$side3}: 3px solid #291e13;
+	}
+	@else if $side2 != "" {
+		border-#{$side1}: 3px solid #291e13;
+		border-#{$side2}: 3px solid #291e13;
+	}
+}
+
+//* Title and content text *//
+
+@mixin box-title-text($margin) {
+	font-family: 'metropolis_1920regular';
+	font-size: 48pt;
+	color: #FFF;
+	text-align: center;
+	margin-top: $margin;
+	text-decoration: underline;
+}
+
+@mixin box-content-text {
+	font-family: Helvetica;
+	font-size: 12pt;
+}

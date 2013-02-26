@@ -1,0 +1,216 @@
+@import "boxes";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-image:url('images/retina_wood.png');		
+	padding: 0;
+}
+
+//* font formatting *//
+
+@font-face {
+    font-family: 'metropolis_1920regular';
+    src: url('fonts/metropolis1920-webfont.eot');
+    src: url('fonts/metropolis1920-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/metropolis1920-webfont.woff') format('woff'),
+         url('fonts/metropolis1920-webfont.ttf') format('truetype'),
+         url('fonts/metropolis1920-webfont.svg#metropolis_1920regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//* navbar *//
+
+.navbar {
+	margin-top: -16px;
+	background-image: url('images/box-bg.png');
+	width: 100%;
+	height: 50px;	
+	list-style: none;
+	opacity: 1;
+	border-bottom: 2px solid #291e13;
+	h2 {
+		margin-top: 20px;
+		float: left;
+		padding-left: 40px;
+		font-size: 24pt;
+		color: #291e13;
+	}
+	h4 {
+		float: left;
+		margin-top: 32px;
+		padding-left: 30px;
+		color: #291e13;
+	}
+	ul {
+		opacity: 1;
+		margin-top: 0;
+		margin-right: 10px;
+	}
+	li {
+		opacity: 1;
+		padding-top: 30px;
+		color: #291e13;
+		font-size: 14pt;
+		float: right;
+		list-style: none;
+		margin-left: 30px;		
+	}
+}
+
+//* contains all main content *//
+ 
+.content-wrapper {
+	padding-top: 20px;
+	position: relative;
+	margin: auto;
+	width: 1267px;
+	overflow: hidden;	
+}
+
+
+//* contains all boxes except for image box *//
+
+.main {
+	width: 854px;
+	display: block;	
+	float: left;
+}
+
+//* Box size & text formatting *//
+
+#about-box {	
+	z-index: 100;
+	@include box-format(470px, 240px);	
+	@include box-border(left, bottom, top);
+	
+	p {
+		@include box-title-text(1.1em);
+	}
+}
+
+#projects-box {
+	
+	@include box-format(378px, 240px);
+	@include box-border(left, bottom, top);
+	p {
+		@include box-title-text(1.1em);
+	}
+}
+
+#resume-box {
+	
+	@include box-format(340px, 210px);
+	@include box-border(left, bottom, right);
+	p {
+		@include box-title-text(.8em);
+		margin-left: -20px;
+	}
+}
+
+#contact-box {
+	
+	@include box-format(508px, 210px);
+	@include box-border(bottom);	
+	p {
+		@include box-title-text(.8em);
+	}
+}
+
+//* Box info formatting *//
+
+#about-info {		
+	margin: 16px 20px 16px 20px;
+	position: absolute;	
+	p {
+	@include box-content-text;
+	}
+	opacity: 0;
+}
+
+#projects-info {		
+	margin: 27px 20px 16px 489px;
+	position: absolute;
+	a {
+		text-decoration: none;
+	}
+	p {
+	@include box-content-text;
+	}
+	opacity: 0;	
+}
+
+#resume-info {	
+	margin: 255px 20px 16px 100px;
+	position: absolute;
+	p {
+	@include box-content-text;	
+	}
+	.fancybox-buttons {
+		z-index: 200;
+	}
+	opacity: 0;
+}
+
+#contact-info {	
+	margin: 272px 20px 16px 530px;
+	position: absolute;
+	a {
+	@include box-content-text;	
+	}
+	opacity: 0;
+}
+
+//* Image box formatting *//
+
+.image {
+	width: 413px;
+	display: block;	
+	float: left;
+}
+
+#image-box {
+	@include box-format(407px, 453px);
+	background-image:url('images/box-bg.png');
+	@include box-border(right, bottom, left, top);		
+	img {
+		opacity: 0.7;
+	}
+}
+
+.fancybox-buttons {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+
+.fancybox-buttons:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+
+.fancybox-buttons {
+	position:relative;
+	top:1px;
+}
+
